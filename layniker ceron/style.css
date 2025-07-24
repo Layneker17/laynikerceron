@@ -1,95 +1,191 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-header{
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
     background-color: rgb(53, 52, 51);
     text-align: center;
     padding: 20px;
     color: white;
 }
 
-
-nav{
+nav {
     background-color: rgb(53, 52, 51);
     padding-bottom: 20px;
 }
 
-nav ul{
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-
 }
 
 nav ul li {
-    flex: 1;
     text-align: center;
-    
+    margin: 5px;
 }
-nav ul li a{
+
+nav ul li a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 15px 0;
+    padding: 15px 20px;
     transition: background-color 0.2s;
-    font-size: 20px;
+    font-size: 18px;
     background-color: black;
     border-radius: 10px;
-    margin: 10px;
-    
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     background-color: aqua;
 }
 
-section{
+section {
     width: 90%;
     margin: 20px auto;
     padding: 15px;
-    background-color:rgb(53, 52, 51) ;
+    background-color: rgb(53, 52, 51);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgb(0, 0, 0.1);
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section h2{
+section h2 {
     color: aliceblue;
+    text-align: center;
 }
 
-label{
+label {
     display: block;
     margin: 10px 0 5px;
     color: azure;
 }
 
-input, select{
-    width: 500px;
-    padding: 10px 0 10px;
+input, select {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid wheat;
-    
 }
 
 input[type="submit"]:hover {
     background-color: aqua;
 }
 
-footer{
+footer {
     background-color: rgb(53, 52, 51);
     padding: 10px 0;
     text-align: center;
+    color: white;
+}
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
 
+.contenedor1 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    
+}
+
+.columna1,
+.columna2 {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+}
+
+.contenedor1-p {
+    color: azure;
+    text-align: justify;
+   
+}
+
+.contenedor1 img {
+    width: 10rem;
+}
+
+.cont-2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    gap: 10px;
+}
+
+.cont-2 img{
+    width: 20rem;
+    height: 20rem;
 }
 
 
-footer a{
-    text-decoration: none;
-    color: white;
-    margin-top: 60px;
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .contenedor1 {
+        grid-template-columns: 1fr;
+    }
+
+    .cont-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cont-2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    input, select {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenedor1 {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .cont-2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cont-2 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .contenedor1 {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .cont-2 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .cont-2 img {
+        width: 20rem;
+        height: 20rem;
+    }
 }
